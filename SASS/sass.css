@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+}
+
+.wrapper {
+  display: grid;
+  background-color: rgb(243, 220, 224);
+  height: 100vh;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 2fr 2fr 2fr 2fr 2fr 2fr;
+  grid-template-areas: "header header header header header" "mellan1 mellan1 stor stor stor" "mellan1 mellan1 stor stor stor" "mellan1 mellan1 stor stor stor" "liten1 liten2 info mellan2 mellan2 " "liten1 liten2 info mellan2 mellan2 " "liten1 liten2 info mellan2 mellan2 ";
+  grid-gap: 0.8rem;
+}
+
+.stor {
+  color: rgb(232, 168, 168);
+  background-color: rgb(232, 168, 168);
+  border-style: solid;
+  grid-area: stor;
+}
+.stor:hover {
+  text-align: center;
+  background-color: red;
+  color: black;
+  font-weight: 800;
+  font-family: monospace;
+}
+
+.wrapper .mellan1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  color: rgb(89, 224, 175);
+  border-style: solid;
+  grid-area: mellan1;
+  background-color: rgb(89, 224, 175);
+}
+.wrapper .mellan1:hover {
+  text-align: center;
+  background-color: red;
+  color: black;
+  font-weight: 800;
+  font-family: monospace;
+}
+.wrapper .mellan1 p {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  border-style: solid;
+}
+.wrapper .mellan1 .bord {
+  border-style: solid;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  background-color: rgba(51, 3, 3, 0.729);
+  height: 2rem;
+  width: 2rem;
+}
+
+.mellan2 {
+  color: rgb(89, 224, 175);
+  border-style: solid;
+  grid-area: mellan2;
+  background-color: rgb(89, 224, 175);
+}
+.mellan2:hover {
+  text-align: center;
+  background-color: red;
+  color: black;
+  font-weight: 800;
+  font-family: monospace;
+}
+
+.liten1 {
+  color: rgb(144, 153, 251);
+  border-style: solid;
+  grid-area: liten1;
+  background-color: rgb(144, 153, 251);
+}
+.liten1:hover {
+  text-align: center;
+  background-color: red;
+  color: black;
+  font-weight: 800;
+  font-family: monospace;
+}
+
+.liten2 {
+  color: rgb(144, 153, 251);
+  border-style: solid;
+  grid-area: liten2;
+  background-color: rgb(144, 153, 251);
+}
+.liten2:hover {
+  text-align: center;
+  background-color: red;
+  color: black;
+  font-weight: 800;
+  font-family: monospace;
+}
+
+.mellan2 {
+  color: rgb(89, 224, 175);
+  border-style: solid;
+  grid-area: mellan2;
+}
+.mellan2:hover {
+  text-align: center;
+  background-color: red;
+  color: black;
+  font-weight: 800;
+  font-family: monospace;
+}
+
+header {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-align: center;
+  margin: 10px;
+  font-size: 2rem;
+  grid-area: header;
+}
+header:hover span {
+  margin-left: 5px;
+  transition: 0.5s linear;
+}
+
+.info {
+  position: relative;
+  top: 5rem;
+  text-align: center;
+  font-family: monospace;
+  font-weight: 800;
+}/*# sourceMappingURL=sass.css.map */

@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+}
+$bord-color: rgb(90, 36, 28);
+$room-color-liten: rgb(144, 153, 251);
+$room-color-mellan: rgb(89, 224, 175);
+$room-color-stor: rgb(232, 168, 168);
+@mixin change(){
+    text-align: center;
+    background-color: red;
+    color: black;
+    font-weight: 800;
+    font-family: monospace;
+}
+@mixin klassrum(){
+    span{ margin-left: 5px;
+        transition: 0.5s linear;
+}}
+
+@mixin bord(){
+    background-color: rgba(51, 3, 3, 0.729);
+    height: 2rem;
+    width: 2rem;
+}
+
+@mixin mellanPOS(){
+    // grid-area: ;
+}
+@mixin kateder(){
+    height: 3rem;
+    width: 2rem;
+    background-color: black;
+}
+
+.wrapper{
+    display: grid;
+    background-color: rgb(243, 220, 224);
+    height: 100vh;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr 2fr 2fr 2fr 2fr 2fr 2fr;
+    grid-template-areas: 
+    "header header header header header"
+    "mellan1 mellan1 stor stor stor"
+    "mellan1 mellan1 stor stor stor"
+    "mellan1 mellan1 stor stor stor"
+    "liten1 liten2 info mellan2 mellan2 "
+    "liten1 liten2 info mellan2 mellan2 "
+    "liten1 liten2 info mellan2 mellan2 ";
+    grid-gap: 0.8rem;
+}
+.stor{
+    color: $room-color-stor;
+    background-color: $room-color-stor;
+    border-style: solid;
+    grid-area: stor;
+    &:hover{@include change}
+}
+
+// VARFÖR KRÅNGLAR DET HÄR MED MED GRID I GRIDEN???
+
+
+.wrapper .mellan1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  
+
+    color: $room-color-mellan;
+    border-style: solid;
+    grid-area: mellan1;
+    background-color: $room-color-mellan;
+    &:hover{@include change};  
+    p{
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        border-style: solid;
+    }
+    .bord{
+        border-style: solid;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        @include bord;
+        // @include mellanPOS();
+    }
+}
+
+
+
+// DET ÄR DET HÄR JAG BLIR GALEN PÅ
+
+
+
+
+
+.mellan2{
+    color: $room-color-mellan;
+    border-style: solid;
+    grid-area: mellan2;
+    background-color: $room-color-mellan;
+    &:hover{@include change}
+}
+.liten1{
+    color: $room-color-liten;
+    border-style: solid;
+    grid-area: liten1;
+    background-color: $room-color-liten;
+    &:hover{@include change}
+}
+.liten2{
+    color: $room-color-liten;
+    border-style: solid;
+    grid-area: liten2;
+    background-color: $room-color-liten;
+    &:hover{@include change}
+}
+.mellan2{
+    color: $room-color-mellan;
+    border-style: solid;
+    grid-area: mellan2;
+    &:hover{@include change}
+}
+
+header{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    margin: 10px;
+    font-size: 2rem;
+    grid-area: header;
+    &:hover{@include klassrum}
+}
+
+.info{
+    position: relative;
+    top: 5rem;
+    text-align: center;
+    font-family: monospace;
+    font-weight: 800;
+}
+
